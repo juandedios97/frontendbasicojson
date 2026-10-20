@@ -1,0 +1,12 @@
+[
+  { "nombre": "Juan", "apellido": "Pérez", "email": "juan.perez@example.com", "telefono": "+34 600 123 456", "direccion": "Calle Mayor 12, Madrid" },
+  { "nombre": "María", "apellido": "González", "email": "maria.gonzalez@example.com", "telefono": "+34 611 987 654", "direccion": "Av. Diagonal 245, Barcelona" },
+  { "nombre": "Carlos", "apellido": "Ruiz", "email": "carlos.ruiz@example.com", "telefono": "+34 622 555 777", "direccion": "Calle Colón 8, Valencia" },
+  { "nombre": "Lucía", "apellido": "Martínez", "email": "lucia.martinez@example.com", "telefono": "+34 633 214 908", "direccion": "Calle Sierpes 31, Sevilla" },
+  { "nombre": "Javier", "apellido": "Sánchez", "email": "javier.sanchez@example.com", "telefono": "+34 644 870 112", "direccion": "Gran Vía 54, Bilbao" },
+  { "nombre": "Ana", "apellido": "López", "email": "ana.lopez@example.com", "telefono": "+34 655 301 476", "direccion": "Calle Larios 5, Málaga" },
+  { "nombre": "Pablo", "apellido": "Fernández", "email": "pablo.fernandez@example.com", "telefono": "+34 666 742 390", "direccion": "Paseo Independencia 19, Zaragoza" },
+  { "nombre": "Elena", "apellido": "Díaz", "email": "elena.diaz@example.com", "telefono": "+34 677 158 623", "direccion": "Calle Uría 22, Oviedo" },
+  { "nombre": "Diego", "apellido": "Moreno", "email": "diego.moreno@example.com", "telefono": "+34 688 469 035", "direccion": "Rúa do Franco 7, Santiago de Compostela" },
+  { "nombre": "Sofía", "apellido": "Romero", "email": "sofia.romero@example.com", "telefono": "+34 699 583 247", "direccion": "Calle Alfonso X 14, Murcia" }
+]

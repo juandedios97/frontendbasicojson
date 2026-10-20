@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fichas personales</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/home.js" defer></script>
+</head>
+<body>
+    <h1>Fichas personales</h1>
+
+    <div class="vistas">
+        <span id="txt-tabla" class="activo">Tabla</span>
+        <label class="switch">
+            <input type="checkbox" id="switch-vista" aria-label="Ver como cards">
+            <span class="deslizador"></span>
+        </label>
+        <span id="txt-cards">Cards</span>
+    </div>
+
+    <div id="preloader" class="preloader" hidden>
+        <div class="spinner"></div>
+        <p>Cargando datos...</p>
+    </div>
+
+    <div id="contenido" class="contenido"></div>
+
+    <p id="mensaje"></p>
+</body>
+</html>
