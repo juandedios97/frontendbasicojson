@@ -12,6 +12,28 @@ let lista = [];
 // Promesa que se resuelve tras "ms" milisegundos (para que se vea el preloader)
 const esperar = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+// ---------- Cookie para recordar la vista ----------
+const COOKIE_VISTA = 'vista';
+
+// Guarda la cookie durante 1 año para toda la carpeta del proyecto
+function guardarCookie(nombre, valor, dias = 365) {
+    const expira = new Date(Date.now() + dias * 24 * 60 * 60 * 1000).toUTCString();
+    const carpeta = location.pathname.substring(0, location.pathname.lastIndexOf('/') + 1);
+    document.cookie = `${nombre}=${encodeURIComponent(valor)}; expires=${expira}; path=${carpeta}; SameSite=Lax`;
+}
+
+function leerCookie(nombre) {
+    const par = document.cookie
+        .split('; ')
+        .find((item) => item.startsWith(nombre + '='));
+    return par ? decodeURIComponent(par.split('=')[1]) : null;
+}
+
+// Devuelve la vista guardada, o "tabla" si no hay cookie o tiene un valor raro
+function vistaGuardada() {
+    return leerCookie(COOKIE_VISTA) === 'cards' ? 'cards' : 'tabla';
+}
+
 function mostrarPreloader(visible) {
     preloader.hidden = !visible;
 }
@@ -90,6 +112,7 @@ function cambiarVista(vista) {
     switchVista.checked = vista === 'cards';
     txtTabla.classList.toggle('activo', vista === 'tabla');
     txtCards.classList.toggle('activo', vista === 'cards');
+    guardarCookie(COOKIE_VISTA, vista);
 }
 
 async function cargarPersonas() {
@@ -111,7 +134,8 @@ async function cargarPersonas() {
             return;
         }
 
-        cambiarVista('tabla');
+        // Abre en la última vista que usó el usuario (según la cookie)
+        cambiarVista(vistaGuardada());
     } catch (error) {
         mensaje.textContent = 'No se pudieron cargar los datos: ' + error.message;
         console.error(error);
